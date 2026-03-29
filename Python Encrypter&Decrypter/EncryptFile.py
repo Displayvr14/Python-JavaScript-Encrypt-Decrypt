@@ -10,13 +10,13 @@ else:
 
 fileDir = './' + fileDir
 
-with open(fileDir, 'r') as file:
-    fileData = file.read()
+with open(fileDir, 'rb') as file:
+    fileData = file.read().decode('latin-1')
 
 encryptedData = Encryption.Encrypt(fileData, Key)
 
-with open(fileDir, 'w') as file:
-    file.write(encryptedData)
+with open(fileDir, 'wb') as file:
+    file.write(encryptedData.encode('latin-1'))
 print("File Encrypted Successfully!")
 input("Press Enter To Exit...")
 # enf*@+Va:BWCQj$~P<>&=3J0?`E%oRtSYu9F6)XkgsTlz#vH/mIb7xcGyD5|!ZU\Ap;'KO,_"i81L(.hMdr- N4q^w2
