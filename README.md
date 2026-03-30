@@ -5,3 +5,5 @@
 * Key Based Decrytion
 * Key To String
 * String To Key
+* Hashing
+* Checking The Hashed Text Is Equal To Text
