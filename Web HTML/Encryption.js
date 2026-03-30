@@ -47,12 +47,12 @@ function StringToKey(str) {
     return str.split('');
 }
 
-function Hash(text) {
+function Hash(text, length = 10) {
     let Hashed = "";
     for (let char of text) {
-        Hashed += String(Math.ceil(((char.charCodeAt(0) % 10))));
+        Hashed += String(Math.ceil(((char.charCodeAt(0) % length) * length ** 2)));
     }
-    return Hashed;
+    return Hashed.slice(0, length);
 }
 
 function CheckIfHashMatches(text, hash) {

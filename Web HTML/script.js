@@ -13,7 +13,7 @@ const CheckHashButton = document.getElementById('CheckHashButton');
 CheckHashButton.addEventListener('click', () => {
     const text = InputKey.value;
     const hash = InputText.value;
-    const calculatedHash = Cryptography.hash(text);
+    const calculatedHash = Cryptography.hash(text, hash.length+1);
     console.log('Calculated Hash:', calculatedHash);
     if (calculatedHash == hash) {
         OutputText.textContent = 'Output: \n Hash matches!';
@@ -23,7 +23,16 @@ CheckHashButton.addEventListener('click', () => {
 });
 
 HashButton.addEventListener('click', () => {
-    OutputText.textContent = 'Output: \n' + Cryptography.hash(InputText.value);
+    let Length;
+    if (InputKey.value.trim() === '') {
+        Length = 10;
+    }if(parseInt(InputKey.value.trim()) > 20){
+        Length = 21;
+        alert('Length cannot be greater than 20. Defaulting to 20.');
+    }else{
+        Length = parseInt(InputKey.value);
+    }
+    OutputText.textContent = 'Output: \n' + Cryptography.hash(InputText.value, Length);
 });
 GenerateKeyButton.addEventListener('click', () => {
     console.log('Generating Key...');
