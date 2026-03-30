@@ -50,7 +50,7 @@ function StringToKey(str) {
 function Hash(text, length = 10) {
     let Hashed = "";
     for (let char of text) {
-        Hashed += String(Math.ceil(((char.charCodeAt(0) % length) * length ** 2)));
+        Hashed += String(Math.ceil(((char.charCodeAt(0) % length) * length)));
     }
     return Hashed.slice(0, length);
 }

@@ -13,7 +13,7 @@ const CheckHashButton = document.getElementById('CheckHashButton');
 CheckHashButton.addEventListener('click', () => {
     const text = InputKey.value;
     const hash = InputText.value;
-    const calculatedHash = Cryptography.hash(text, hash.length+1);
+    const calculatedHash = Cryptography.hash(text, 21);
     console.log('Calculated Hash:', calculatedHash);
     if (calculatedHash == hash) {
         OutputText.textContent = 'Output: \n Hash matches!';
@@ -23,27 +23,26 @@ CheckHashButton.addEventListener('click', () => {
 });
 
 HashButton.addEventListener('click', () => {
-    let Length;
-    if (InputKey.value.trim() === '') {
-        Length = 10;
-    }if(parseInt(InputKey.value.trim()) > 20){
-        Length = 21;
-        alert('Length cannot be greater than 20. Defaulting to 20.');
-    }else{
-        Length = parseInt(InputKey.value);
-    }
+    let Length = 21;
     OutputText.textContent = 'Output: \n' + Cryptography.hash(InputText.value, Length);
 });
 GenerateKeyButton.addEventListener('click', () => {
     console.log('Generating Key...');
     const key = Cryptography.generateKey();
     OutputText.textContent = 'Output: \n' + Cryptography.keyToString(key);
+    InputKey.value = Cryptography.keyToString(key);
 });
 
 EncryptButton.addEventListener('click', () => {
+    if (InputKey.value.trim() === '') {
+        InputKey.value = Cryptography.keyToString(Cryptography.generateKey());
+    }
     OutputText.textContent = 'Output: \n' + encrypt(InputText.value, InputKey.value);
 });
 DecryptButton.addEventListener('click', () => {
+    if (InputKey.value.trim() === '') {
+        InputKey.value = Cryptography.keyToString(Cryptography.generateKey());
+    }
     OutputText.textContent = 'Output: \n' + decrypt(InputText.value, InputKey.value);
 });
 
