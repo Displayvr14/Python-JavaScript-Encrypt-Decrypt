@@ -1,0 +1,98 @@
+#TitleText{
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    user-select: none;
+    background-color: #6a7a8b;
+}
+#toolbar{
+    position: absolute;
+    display: flex;
+    top: 133px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4b5b6b;
+    width: fit-content;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+}
+#toolbar button{
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #596d81;
+    color: white;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+#toolbar button:hover{
+    background-color: #6e8499;
+}
+#toolbar button:active{
+    background-color: hsl(212, 16%, 45%);
+    transform: scale(0.98);
+}
+#container{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color: #7a8ea3;
+}
+#inputText{
+    position: absolute;
+    top: 400px;
+    left: 20px;
+    width: 40%;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4b5b6b;
+    color: rgb(122, 205, 211);
+    resize: none;
+    user-select: none;
+}
+#inputKey{
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4b5b6b;
+    color: rgb(122, 205, 211);
+    resize: none;
+    user-select: none;
+}
+#outputLabel{
+    position: absolute;
+    top: 382px;
+    right: 20px;
+    width: 40%;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4b5b6b;
+    color: rgb(0, 243, 24);
+    resize: none;
+    overflow-y: auto;
+    font-family:'Courier New', Courier, monospace;
+}
