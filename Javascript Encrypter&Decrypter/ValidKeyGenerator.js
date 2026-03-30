@@ -14,3 +14,4 @@ rl.question('How many keys do you want to generate? ', (answer) => {
   }
   rl.close();
 });
+

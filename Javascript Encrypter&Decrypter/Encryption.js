@@ -47,10 +47,25 @@ function StringToKey(str) {
     return str.split('');
 }
 
+function Hash(text) {
+    let Hashed = "";
+    for (let char of text) {
+        Hashed += String(Math.ceil(((char.charCodeAt(0) % 10))));
+    }
+    return Hashed;
+}
+
+function CheckIfHashMatches(text, hash) {
+    return Hash(text) == hash;
+}
+
+
 module.exports = {
     encrypt: Encrypt,
     decrypt: Decrypt,
     generateKey: GenerateKey,
     keyToString: KeyToString,
-    stringToKey: StringToKey
+    stringToKey: StringToKey,
+    hash: Hash,
+    checkIfHashMatches: CheckIfHashMatches
 }
